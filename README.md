@@ -1,36 +1,71 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Shegun Otulana Personal Website
+
+Personal website built with Next.js 15, TypeScript, and Tailwind CSS.
+
+## Features
+
+- **Personal Section**: Bio, values, and timeline
+- **Work Section**: Portfolio of products and companies
+- **Blog Section**: Link to Substack for articles
+- **Contact Section**: Social media links and contact information
+- **Responsive Design**: Mobile-first with accessible navigation
+- **SEO Optimized**: Structured data and metadata
+
+## Tech Stack
+
+- Next.js 15 (App Router)
+- TypeScript
+- Tailwind CSS v4
+- shadcn/ui
+- Inter & Source Serif 4 fonts
 
 ## Getting Started
 
-First, run the development server:
-
 ```bash
+# Install dependencies
+npm install
+
+# Run development server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+
+# Build for production
+npm run build
+
+# Start production server
+npm start
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Customization
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Update Social Links
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Edit `/app/contact/page.tsx` to update social media URLs:
+- LinkedIn
+- X (Twitter)
+- Substack
 
-## Learn More
+### Update Work Items
 
-To learn more about Next.js, take a look at the following resources:
+Edit `/app/work/page.tsx` to add or modify work items.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Update Substack URL
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Edit `/app/blog/page.tsx` and replace the placeholder Substack URL.
 
-## Deploy on Vercel
+## Design System
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+The site uses a custom design system based on the brand strategy:
+- Primary Color: #2F81F7 (Action Blue)
+- Secondary Color: #00BFA5 (Signal Teal)
+- Warm: #F59E0B (Warm Amber)
+- Accent: #7C3AED (Accent Purple)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Typography:
+- Sans: Inter (UI/body)
+- Serif: Source Serif 4 (headlines/pull-quotes)
+
+## Future Enhancements
+
+- Optional: Add Substack RSS feed integration
+- Optional: Add analytics (Plausible/GA4)
+- Optional: Add UTM tracking for outbound links

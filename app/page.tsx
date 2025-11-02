@@ -1,65 +1,134 @@
-import Image from "next/image";
+"use client";
+
+import Link from "next/link";
+import { Hero } from "@/components/hero";
+import { Section } from "@/components/section";
+import { MagneticButton } from "@/components/magnetic-button";
+import { useEffect, useRef } from "react";
 
 export default function Home() {
+  const sectionRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    const elements = document.querySelectorAll(".text-reveal");
+    elements.forEach((el) => observer.observe(el));
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <main className="overflow-hidden">
+      <Hero 
+        title="Shegun Otulana"
+      >
+        <div className="flex flex-wrap gap-4 mt-6">
+          <MagneticButton href="/personal" className="btn btn-primary group relative overflow-hidden">
+            <span className="relative z-10 flex items-center gap-2">
+              About Me
+              <span className="group-hover:translate-x-1 transition-transform inline-block">→</span>
+            </span>
+            <div className="absolute inset-0 bg-gradient-to-r from-primary via-secondary to-primary bg-[length:200%_100%] opacity-0 group-hover:opacity-100 group-hover:animate-shimmer transition-opacity"></div>
+          </MagneticButton>
+          <MagneticButton href="/work" className="btn btn-outline group relative">
+            <span className="relative z-10 flex items-center gap-2">
+              View Work
+              <span className="group-hover:translate-x-1 transition-transform inline-block">→</span>
+            </span>
+          </MagneticButton>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+      </Hero>
+
+      <div className="relative">
+        {/* Organic shapes background */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          <div className="absolute top-20 left-10 w-96 h-96 bg-primary/5 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-20 right-10 w-80 h-80 bg-secondary/5 rounded-full blur-3xl"></div>
+          <div className="absolute top-1/2 left-1/2 w-72 h-72 bg-accent-purple/5 rounded-full blur-3xl"></div>
         </div>
-      </main>
-    </div>
+
+        <Section className="relative py-32">
+          {/* Asymmetrical intro */}
+          <div className="mb-20 max-w-2xl">
+            <h2 className="text-5xl md:text-6xl font-bold mb-6 leading-tight text-reveal">
+              What I'm up to
+            </h2>
+            <p className="text-xl text-muted-foreground leading-relaxed text-reveal">
+              A few ways to dive in
+            </p>
+          </div>
+          
+          {/* Asymmetrical card layout */}
+          <div className="space-y-12">
+            <Link 
+              href="/personal" 
+              className="card p-10 md:p-12 group relative overflow-hidden block max-w-2xl ml-auto hover:rotate-1 transition-transform duration-500"
+            >
+              <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-br from-primary/20 via-secondary/10 to-transparent rounded-full blur-3xl opacity-50 group-hover:opacity-100 transition-opacity duration-700"></div>
+              <div className="relative z-10">
+                <div className="text-6xl mb-6 inline-block group-hover:scale-110 transition-transform duration-300">👤</div>
+                <h2 className="text-4xl md:text-5xl font-bold mb-4 group-hover:gradient-text transition-all">
+                  Personal
+                </h2>
+                <p className="text-lg text-muted-foreground leading-relaxed">
+                  My background, values, and the journey that shaped how I build companies.
+                </p>
+                <div className="mt-6 text-primary font-semibold group-hover:translate-x-2 transition-transform inline-block">
+                  Learn more →
+                </div>
+              </div>
+            </Link>
+            
+            <Link 
+              href="/work" 
+              className="card p-10 md:p-12 group relative overflow-hidden block max-w-2xl mr-auto hover:-rotate-1 transition-transform duration-500"
+            >
+              <div className="absolute bottom-0 left-0 w-64 h-64 bg-gradient-to-tr from-secondary/20 via-primary/10 to-transparent rounded-full blur-3xl opacity-50 group-hover:opacity-100 transition-opacity duration-700"></div>
+              <div className="relative z-10">
+                <div className="text-6xl mb-6 inline-block group-hover:scale-110 transition-transform duration-300">💼</div>
+                <h2 className="text-4xl md:text-5xl font-bold mb-4 group-hover:gradient-text transition-all">
+                  Work
+                </h2>
+                <p className="text-lg text-muted-foreground leading-relaxed">
+                  The products and companies I've built, invested in, and helped scale.
+                </p>
+                <div className="mt-6 text-secondary font-semibold group-hover:translate-x-2 transition-transform inline-block">
+                  See projects →
+                </div>
+              </div>
+            </Link>
+            
+            <Link 
+              href="/blog" 
+              className="card p-10 md:p-12 group relative overflow-hidden block max-w-2xl ml-auto hover:rotate-1 transition-transform duration-500"
+            >
+              <div className="absolute top-0 left-0 w-64 h-64 bg-gradient-to-br from-accent-purple/20 via-primary/10 to-transparent rounded-full blur-3xl opacity-50 group-hover:opacity-100 transition-opacity duration-700"></div>
+              <div className="relative z-10">
+                <div className="text-6xl mb-6 inline-block group-hover:scale-110 transition-transform duration-300">✍️</div>
+                <h2 className="text-4xl md:text-5xl font-bold mb-4 group-hover:gradient-text transition-all">
+                  Blog
+                </h2>
+                <p className="text-lg text-muted-foreground leading-relaxed">
+                  Thoughts on building, investing, operating, and the systems that actually work.
+                </p>
+                <div className="mt-6 text-accent-purple font-semibold group-hover:translate-x-2 transition-transform inline-block">
+                  Read posts →
+                </div>
+              </div>
+            </Link>
+          </div>
+        </Section>
+      </div>
+    </main>
   );
 }

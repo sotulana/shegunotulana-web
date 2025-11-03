@@ -25,14 +25,14 @@ I live in Birmingham with my wife Mary and our four children.`;
         <div className="absolute bottom-0 right-0 w-[600px] h-[600px] bg-secondary/5 rounded-full blur-3xl"></div>
       </div>
 
-      <Section className="relative py-20">
-        <div className="max-w-4xl">
-          <h1 className="text-6xl md:text-7xl font-black mb-8 leading-tight">
+      <Section className="relative py-12 sm:py-16 md:py-20">
+        <div className="max-w-4xl px-4">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black mb-6 md:mb-8 leading-tight">
             <span className="gradient-text">About Me</span>
           </h1>
           <div className="prose prose-lg max-w-none">
             {aboutMe.split('\n\n').map((paragraph, idx) => (
-              <p key={idx} className="text-xl md:text-2xl text-foreground leading-relaxed font-light mb-8">
+              <p key={idx} className="text-base sm:text-lg md:text-xl lg:text-2xl text-foreground leading-relaxed font-light mb-6 md:mb-8">
                 {paragraph}
               </p>
             ))}

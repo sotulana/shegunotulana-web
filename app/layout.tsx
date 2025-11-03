@@ -18,6 +18,11 @@ const sourceSerif = Source_Serif_4({
 export const metadata: Metadata = {
   title: "Shegun Otulana",
   description: "Builder, investor, and CEO focused on practical company building and compounding impact. CEO of Copysmith AI.",
+  viewport: {
+    width: "device-width",
+    initialScale: 1,
+    maximumScale: 5,
+  },
   openGraph: {
     title: "Shegun Otulana",
     description: "Builder, investor, and CEO focused on practical company building and compounding impact.",

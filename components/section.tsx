@@ -10,7 +10,7 @@ export function Section({ children, className }: SectionProps) {
   return (
     <section
       className={cn(
-        "container mx-auto max-w-[var(--max-width)] px-[var(--gutter)] py-16",
+        "container mx-auto max-w-[var(--max-width)] px-4 sm:px-6 md:px-[var(--gutter)] py-12 sm:py-16 md:py-20",
         className
       )}
     >

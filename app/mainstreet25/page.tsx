@@ -85,7 +85,12 @@ export default function MainstreetPage() {
                     If you or your marketing team wants to build a content engine that actually works 
                     and start ranking on AI search (yes, that's a thing now), here's your chance to try it out.
                   </p>
-                  <div className="bg-gradient-to-r from-primary/10 to-secondary/10 rounded-2xl p-8 mb-6 border-2 border-primary/30">
+                  <Link
+                    href="https://frase.io?utm_source=shegunotulana&utm_medium=referral&utm_campaign=mainstreet-summit-2025&utm_content=frase-coupon&utm_term=MAINSTREET25"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block bg-gradient-to-r from-primary/10 to-secondary/10 rounded-2xl p-8 mb-6 border-2 border-primary/30 hover:border-primary hover:shadow-lg transition-all cursor-pointer group/coupon"
+                  >
                     <div className="text-sm text-muted-foreground mb-2 uppercase tracking-wider font-semibold">
                       Exclusive Summit Coupon Code
                     </div>
@@ -95,13 +100,14 @@ export default function MainstreetPage() {
                     <div className="text-xl text-primary font-bold mb-2">
                       50% Off Professional Plan
                     </div>
-                    <div className="text-lg text-foreground">
+                    <div className="text-lg text-foreground flex items-center gap-2">
                       Use this code when you sign up at{" "}
-                      <Link href="https://frase.io?utm_source=shegunotulana&utm_medium=referral&utm_campaign=mainstreet-summit-2025&utm_content=frase-coupon&utm_term=MAINSTREET25" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline font-semibold">
+                      <span className="text-primary font-semibold group-hover/coupon:underline">
                         frase.io
-                      </Link>
+                      </span>
+                      <span className="text-primary opacity-0 group-hover/coupon:opacity-100 transition-opacity">→</span>
                     </div>
-                  </div>
+                  </Link>
                   <div className="flex flex-wrap gap-3">
                     <span className="px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-semibold">
                       ✓ AI-Powered Content
@@ -137,20 +143,26 @@ export default function MainstreetPage() {
                     If you're an agent, transaction coordinator, or know someone who wants to use AI 
                     to be more efficient from contract to close (and honestly, who doesn't?), this one's for you.
                   </p>
-                  <div className="bg-gradient-to-r from-accent-purple/10 to-primary/10 rounded-2xl p-8 mb-6 border-2 border-accent-purple/30">
+                  <Link
+                    href="https://listedkit.ai?utm_source=shegunotulana&utm_medium=referral&utm_campaign=mainstreet-summit-2025&utm_content=listedkit-coupon&utm_term=MAINSTREET25"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block bg-gradient-to-r from-accent-purple/10 to-primary/10 rounded-2xl p-8 mb-6 border-2 border-accent-purple/30 hover:border-accent-purple hover:shadow-lg transition-all cursor-pointer group/coupon"
+                  >
                     <div className="text-sm text-muted-foreground mb-2 uppercase tracking-wider font-semibold">
                       Exclusive Summit Coupon Code
                     </div>
                     <div className="text-4xl md:text-5xl font-black text-accent-purple mb-2 font-mono tracking-wider">
                       MAINSTREET25
                     </div>
-                    <div className="text-lg text-foreground">
+                    <div className="text-lg text-foreground flex items-center gap-2">
                       Use this code when you sign up at{" "}
-                      <Link href="https://listedkit.ai?utm_source=shegunotulana&utm_medium=referral&utm_campaign=mainstreet-summit-2025&utm_content=listedkit-coupon&utm_term=MAINSTREET25" target="_blank" rel="noopener noreferrer" className="text-accent-purple hover:underline font-semibold">
+                      <span className="text-accent-purple font-semibold group-hover/coupon:underline">
                         listedkit.ai
-                      </Link>
+                      </span>
+                      <span className="text-accent-purple opacity-0 group-hover/coupon:opacity-100 transition-opacity">→</span>
                     </div>
-                  </div>
+                  </Link>
                   <div className="flex flex-wrap gap-3">
                     <span className="px-4 py-2 bg-accent-purple/10 text-accent-purple rounded-full text-sm font-semibold">
                       ✓ Contract to Close

@@ -97,7 +97,7 @@ export default function MainstreetPage() {
                     </div>
                     <div className="text-lg text-foreground">
                       Use this code when you sign up at{" "}
-                      <Link href="https://frase.io" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline font-semibold">
+                      <Link href="https://frase.io?utm_source=shegunotulana&utm_medium=referral&utm_campaign=mainstreet-summit-2025&utm_content=frase-coupon&utm_term=MAINSTREET25" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline font-semibold">
                         frase.io
                       </Link>
                     </div>
@@ -146,7 +146,7 @@ export default function MainstreetPage() {
                     </div>
                     <div className="text-lg text-foreground">
                       Use this code when you sign up at{" "}
-                      <Link href="https://listedkit.ai" target="_blank" rel="noopener noreferrer" className="text-accent-purple hover:underline font-semibold">
+                      <Link href="https://listedkit.ai?utm_source=shegunotulana&utm_medium=referral&utm_campaign=mainstreet-summit-2025&utm_content=listedkit-coupon&utm_term=MAINSTREET25" target="_blank" rel="noopener noreferrer" className="text-accent-purple hover:underline font-semibold">
                         listedkit.ai
                       </Link>
                     </div>
